@@ -1,0 +1,42 @@
+<h1>{{ name }}</h1>
+
+<dl class="my-5">
+  <td>Nombre:</td>
+  <dd class="font-semibold text-2xl">{{ name }}</dd>
+
+  <td>Edad:</td>
+  <dd class="font-semibold text-2xl">{{ age }}</dd>
+
+  <td>Metodo:</td>
+  <dd class="font-semibold text-2xl">{{ getHeroDescription() }}</dd>
+
+  <td>Capitalización:</td>
+  <dd class="font-semibold text-2xl">{{ capitalizedName }}</dd>
+
+</dl>
+
+<button
+  *ngIf="name !=='Spiderman'"
+  (click)="changeHero()"
+  type="button"
+  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+  Cambiar nombre
+</button>
+
+<button
+  (click)="resetForm()"
+  type="button"
+  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+ reset
+</button>
+
+<button
+  *ngIf="age !== 25"
+  (click)="changeAge()"
+  type="button"
+  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+  Cambiar edad
+</button>
+
+
+

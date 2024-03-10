@@ -1,0 +1,23 @@
+<h3>Listado de Heroes</h3>
+
+<div *ngIf="heroeEliminado; else mensajeBorrado">
+  <h3>Heroe borrado: <small class="text-red-700">{{ heroeEliminado }}</small></h3>
+</div>
+
+<ng-template #mensajeBorrado >
+  <h3>No ha borrado nada</h3>
+</ng-template>
+
+
+<!--- se pone heroNames porque es donde esta almacenado el arreglo, y el punto length para ver la cantidad de elementos que tiene el arreglo --->
+<button *ngIf="heroNames.length > 0" (click)="eliminarHeroe()" type="button"
+  class="text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+  borrar último héroe
+</button>
+
+<ul class="mt-2 list-outside">
+  <li *ngFor="let name of heroNames"
+  class="list-item">
+  {{name}}
+  </li>
+</ul>
